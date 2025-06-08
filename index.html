@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supply Chain Digital Twin</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel">
+        <p class="eyebrow">Operations Intelligence</p>
+        <h1>Supply Chain Digital Twin</h1>
+        <p class="desc">
+          Simulate factories, hubs, and retail endpoints under dynamic demand and disruption.
+        </p>
+
+        <div class="card">
+          <h2>Control Tower</h2>
+          <label>Demand Multiplier
+            <input id="demandInput" type="range" min="0.6" max="2.2" step="0.1" value="1.2" />
+            <span id="demandValue">1.2</span>
+          </label>
+          <label>Transit Risk
+            <input id="riskInput" type="range" min="0" max="0.4" step="0.02" value="0.12" />
+            <span id="riskValue">0.12</span>
+          </label>
+          <label>Dispatch Rate
+            <input id="dispatchInput" type="range" min="1" max="8" step="1" value="4" />
+            <span id="dispatchValue">4</span>
+          </label>
+        </div>
+
+        <div class="card">
+          <h2>Actions</h2>
+          <div class="row">
+            <button id="startBtn">Start</button>
+            <button id="pauseBtn">Pause</button>
+          </div>
+          <div class="row">
+            <button id="shockBtn">Demand Shock</button>
+            <button id="rerouteBtn">AI Reroute</button>
+          </div>
+          <button id="resetBtn">Reset Scenario</button>
+        </div>
+
+        <div class="card metrics">
+          <h2>Live KPIs</h2>
+          <p>Throughput: <strong id="throughputText">0</strong></p>
+          <p>Avg Delay: <strong id="delayText">0h</strong></p>
+          <p>Stockouts: <strong id="stockoutText">0</strong></p>
+          <p>Service Level: <strong id="serviceText">100%</strong></p>
+        </div>
+      </section>
+
+      <section class="canvas-wrap">
+        <canvas id="twin" width="980" height="620"></canvas>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
